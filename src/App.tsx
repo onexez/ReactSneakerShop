@@ -5,14 +5,15 @@ import Home from "./pages/Home";
 import React, { Suspense } from "react";
 import { lazy } from "react";
 import Loadable from "react-loadable";
+import { Loading } from "./components/Loading/Loading";
 
 //Загрузка lazy
-// const Cart = lazy(() => import("./pages/Cart"));
+const Cart = lazy(() => import("./pages/Cart"));
 
-const Cart = Loadable({
-  loader: () => import(/* webpackChunkName: "Cart" */ "./pages/Cart"),
-  loading: () => <div>Идет загрузка корзины...</div>,
-});
+// const Cart = Loadable({
+//   loader: () => import(/* webpackChunkName: "Cart" */ "./pages/Cart"),
+//   loading: () => <Loading />,
+// });
 
 const NotFound = lazy(() => import("./pages/NotFound"));
 const FullSneaker = lazy(() => import("./pages/FullSneaker"));
